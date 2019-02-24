@@ -29,12 +29,16 @@ public class MapParser implements ArgumentParser<Map<String, String>> {
     public void parseArgument(String arg) {
         String[] entries = arg.split(MAP_ENTRY_SEPARATOR);
         for (String entry : entries) {
-            String[] tokens = entry.split(":");
-            if (tokens.length != 2) {
-                throw ArgsException.withDefaultMessage(ErrorCode.MALFORMED_MAP, argumentId);
-            }
-            value.put(tokens[0], tokens[1]);
+            addEntry(entry);
         }
+    }
+
+    private void addEntry(String entry) {
+        String[] tokens = entry.split(":");
+        if (tokens.length != 2) {
+            throw ArgsException.withDefaultMessage(ErrorCode.MALFORMED_MAP, argumentId);
+        }
+        value.put(tokens[0], tokens[1]);
     }
 
     @Override
