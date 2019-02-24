@@ -13,7 +13,7 @@ public class SchemaReader {
         }
 
         String[] tokens = schema.split(",");
-        for (String token: tokens) {
+        for (String token : tokens) {
             addTokenToSchemaElements(token.trim());
         }
         return schemaElements;

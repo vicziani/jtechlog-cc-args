@@ -24,8 +24,7 @@ public class IntParser implements ArgumentParser<Integer> {
     public void parseArgument(String arg) {
         try {
             value = Integer.parseInt(arg);
-        }
-        catch (NumberFormatException nfe) {
+        } catch (NumberFormatException nfe) {
             throw ArgsException.withDefaultMessage(ErrorCode.INVALID_INTEGER, argumentId, arg);
         }
     }

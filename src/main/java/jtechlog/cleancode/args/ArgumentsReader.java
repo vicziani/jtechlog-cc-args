@@ -33,12 +33,10 @@ public class ArgumentsReader {
         if (!argumentParsersQueue.isEmpty()) {
             parseArgumentValue(arg);
             return true;
-        }
-        else if (arg.startsWith(ARGUMENT_ID_PREFIX)) {
+        } else if (arg.startsWith(ARGUMENT_ID_PREFIX)) {
             parseArgumentIds(arg);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
